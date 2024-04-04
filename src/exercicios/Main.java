@@ -9,9 +9,18 @@ public class Main {
 		Plano clinica = new Clinica("Plano",80.00,0.05,"Eduardo","bla");
 		System.out.println("O valor a ser pago é: "+medico.calcularPagamento());
 		System.out.println("O valor a ser pago é: "+anestesista.calcularPagamento());
+		System.out.println("Valor a ser pago é:"+ clinica.calcularPagamento());
 		System.out.println("\n"+medico.toString());
 		System.out.println(anestesista.toString());
 		System.out.println(clinica.toString());
+		
+		ControlePagamento pgtoTotal = new ControlePagamento();
+		
+		pgtoTotal.calcularTotalpago(medico);
+		pgtoTotal.calcularTotalpago(anestesista);
+		pgtoTotal.calcularTotalpago(clinica);
+		
+		System.out.println("\n" + pgtoTotal.getTotalPago());
 	}
 
 }
